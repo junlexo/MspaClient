@@ -1,0 +1,59 @@
+<header id="mod-navigation" class="siteheader fs-header" role="banner">
+  <!--  <button type="button" id="show_nav" class="siteheader__control siteheader__control--filter js_filter_tools">
+      <span class="flex-wrapper">
+         <span class="icon-ic icon-contain">
+            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" viewBox="0 0 24 24">
+               <path class="svg-color--primary" d="M3.53 8H13a2.5 2.5 0 0 0 4.9 0h2.57a.5.5 0 1 0 0-1H17.9A2.5 2.5 0 0 0 13 7H3.53a.5.5 0 1 0 0 1zm11.92-2a1.5 1.5 0 0 1 1.41 1 1.434 1.434 0 0 1 0 1 1.494 1.494 0 0 1-2.82 0 1.434 1.434 0 0 1 0-1 1.5 1.5 0 0 1 1.41-1zM3 16.5a.515.515 0 0 0 .53.5H6.1a2.5 2.5 0 0 0 4.9 0h9.47a.5.5 0 1 0 0-1H11a2.5 2.5 0 0 0-4.9 0H3.53a.515.515 0 0 0-.53.5zm4.14.5a1.434 1.434 0 0 1 0-1 1.494 1.494 0 0 1 2.82 0 1.434 1.434 0 0 1 0 1 1.494 1.494 0 0 1-2.82 0z" fill="#37454d"></path>
+            </svg>
+         </span>
+         Bộ lọc
+      </span>
+   </button> -->
+   <a class="siteheader__logo-link">
+      Đặt Phòng Online
+   </a>
+   <div class="siteheader__headertools js_header_tools siteheader__menu">
+      <div class="siteheader__control siteheader__control--currency">
+         <div class="flex-wrapper">VND</div>
+         <label for="currency" class="visuallyhidden">Loại tiền tệ:</label>
+         <select id="currency" class="siteheader__select">
+            <optgroup label="Ngoại tệ cơ bản">                              
+               <option class="option" value="USD">USD - Đô la Mỹ</option>
+            </optgroup>           
+         </select>
+      </div>      
+      <div class="language">     
+         <div class="siteheader__control siteheader__control--currency">    
+            <div class="flex-wrapper">Tiếng Việt</div>
+            <label for="language" class="visuallyhidden">Ngôn Ngữ:</label>
+            <select id="language" class="siteheader__select">
+               <optgroup label="{{message.language}}">                              
+                  <option class="option" value="en">English</option>
+               </optgroup>           
+            </select>
+         </div>
+      </div>
+      <div class="pos-relative">
+         <button id="member" type="button" class="siteheader__control" >
+            <span id="member-text" class="flex-wrapper">
+               Tài khoản của tôi
+               <span class="icon-ic siteheader__arrow-ic">
+                  <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="13" height="7" viewBox="0 0 13 7">
+                     <path class="svg-color--primary" fill="#37454D" d="M5.8 6.72L.32 1.822C-.094 1.472-.094.772.25.352c.342-.42 1.028-.42 1.44-.07l4.797 4.27L11.284.28c.412-.42 1.097-.35 1.44.07.412.42.342 1.12-.068 1.47L7.172 6.72c-.205.21-.412.28-.685.28-.274 0-.48-.07-.686-.28z"></path>
+                  </svg>
+               </span>
+            </span>
+         </button>
+         <div class="popover-wrapper popover-wrapper--bottom-trailing header-popover header-popover--member">
+            <section class="popover">
+               <div class="fs-menu__section">
+                  <ul class="fs-menu__list">
+                     <li class="fs-menu__item"><button type="button" class="fs-menu__button w-100 ta-leading">Đăng nhập</button></li>
+                     <li class="fs-menu__item"><button type="button" class="fs-menu__button w-100 ta-leading">Đăng ký</button></li>
+                  </ul>
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
+</header>

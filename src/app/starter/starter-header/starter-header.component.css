@@ -1,0 +1,53 @@
+header {
+	display: flex;
+	flex: 0 1 auto;
+	justify-content: flex-end;
+	background: #ffffff;
+	height: 64px;
+}
+header .siteheader__logo-link {
+	position: absolute;
+	width: 100%;
+	text-align: center;	
+	font-size: 45px;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.siteheader__headertools {
+	display: flex;
+}
+.language {
+	border-left: 1px #ebeced solid;
+	border-width: 0;
+}
+.flex-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.visuallyhidden {
+	display: none;
+}
+.siteheader__select {
+	position: absolute;
+	opacity: 0;
+	width: 64px;
+}
+.siteheader__control {
+	position: relative;
+	border-style: none;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0);
+    outline: none;
+    border-left: 1px #ebeced solid;
+    padding: 0 16px;
+    line-height: 64px;
+}
+
+.fs-menu__button {
+	padding: 0 16px;
+}
+.siteheader__arrow-ic {
+	margin-left: 5px;
+}
