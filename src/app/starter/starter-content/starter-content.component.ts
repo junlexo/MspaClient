@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {} from 'jquery';
+
 // Variable in assets/js/scripts.js file
 declare var AdminLTE: any;
 
