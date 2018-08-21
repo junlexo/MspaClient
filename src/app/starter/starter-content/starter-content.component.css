@@ -73,7 +73,7 @@
     min-width: 40px;
     vertical-align: middle;
 }
-#mod-home .btn-horus-content {
+#mod-home .btn-hour-content {
 	display: table-cell;
     text-align: left;
 }
@@ -86,7 +86,96 @@
 	max-width: 268px;
 	min-width: 120px;
 	display: table-cell;
-    vertical-align: middle;    
+    vertical-align: middle;  
+    height: 50px;  
+}
+#mod-home .btn-hour-roomtype {
+	height: 50px;
+}
+#mod-home .df_overlay_arrow {
+	position: absolute;
+    bottom: 2px;
+    left: 69%;
+    z-index: 3000;
+    right: auto;
+    width: 16px;
+}
+#mod-home .df_overlay_arrow:before,
+#mod-home .df_overlay_arrow:after {
+	content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    margin-left: 1px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+#mod-home .df_overlay {
+	position: absolute;
+    left: 65%;
+    top: 100%;
+    margin-top: -2px;
+    background: #fff;
+    z-index: 2000;
+    /*display: none;*/
+    box-shadow: 0 1px 4px 0 rgba(41,51,57,.5);
+    border-radius: 2px;
+    min-width: 196px;
+}
+#mod-home [type=button] {
+	padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+#mod-home .btn__roomtype {
+	width: 100%;
+	text-align: left;
+}
+#mod-home .df_dropdown {
+	display: table;
+    min-width: 194px;
+    width: 100%;
+    margin-bottom: 0;
+}
+#mod-home .df_dropdown_option {
+	cursor: pointer;
+    display: table-row;
+    border-bottom: 1px solid #ebeced;
+    text-align: center;
+}
+#mod-home .df_dropdown_option:hover {
+	background: #ebeced;
+}
+#mod-home .df_component{
+	display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    height: 100%;
+    padding-left: 8px;
+}
+#mod-home .icon-ic {
+	background-repeat: no-repeat;
+    background-position: 50%;
+    line-height: 0;
+    display: inline-block;
+    text-indent: 0;
+}
+#mod-home .df_dropdown_option .df_label {
+	padding: 13px 12px;
+}
+#mod-home .df_container_roomtype_selector {
+    display: table;
+    min-width: 194px;
+    width: 100%;
+    margin-bottom: 0;
+   	padding: 8px 10px;
+}
+#mod-home .df_container_roomtype_selector li{
+	list-style-type: none;
 }
 .input-header {
 	width: 100%;
