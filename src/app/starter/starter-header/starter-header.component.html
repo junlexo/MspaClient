@@ -1,31 +1,21 @@
 <header id="mod-navigation" class="siteheader fs-header" role="banner">
-  <!--  <button type="button" id="show_nav" class="siteheader__control siteheader__control--filter js_filter_tools">
-      <span class="flex-wrapper">
-         <span class="icon-ic icon-contain">
-            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" viewBox="0 0 24 24">
-               <path class="svg-color--primary" d="M3.53 8H13a2.5 2.5 0 0 0 4.9 0h2.57a.5.5 0 1 0 0-1H17.9A2.5 2.5 0 0 0 13 7H3.53a.5.5 0 1 0 0 1zm11.92-2a1.5 1.5 0 0 1 1.41 1 1.434 1.434 0 0 1 0 1 1.494 1.494 0 0 1-2.82 0 1.434 1.434 0 0 1 0-1 1.5 1.5 0 0 1 1.41-1zM3 16.5a.515.515 0 0 0 .53.5H6.1a2.5 2.5 0 0 0 4.9 0h9.47a.5.5 0 1 0 0-1H11a2.5 2.5 0 0 0-4.9 0H3.53a.515.515 0 0 0-.53.5zm4.14.5a1.434 1.434 0 0 1 0-1 1.494 1.494 0 0 1 2.82 0 1.434 1.434 0 0 1 0 1 1.494 1.494 0 0 1-2.82 0z" fill="#37454d"></path>
-            </svg>
-         </span>
-         Bộ lọc
-      </span>
-   </button> -->
    <a class="siteheader__logo-link">
       Đặt Phòng Online
    </a>
    <div class="siteheader__headertools js_header_tools siteheader__menu">
-      <div class="siteheader__control siteheader__control--currency">
+      <div class="siteheader__control siteheader__control--currency desktop">
          <div class="flex-wrapper">VND</div>
-         <label for="currency" class="visuallyhidden">Loại tiền tệ:</label>
+         <label for="currency" class="visuallyhidden">{{message.currency_type}}:</label>
          <select id="currency" class="siteheader__select">
             <optgroup label="Ngoại tệ cơ bản">                              
-               <option class="option" value="USD">USD - Đô la Mỹ</option>
+               <option class="option" value="USD">USD</option>
             </optgroup>           
          </select>
       </div>      
-      <div class="language">     
+      <div class="language desktop">     
          <div class="siteheader__control siteheader__control--currency">    
             <div class="flex-wrapper">Tiếng Việt</div>
-            <label for="language" class="visuallyhidden">Ngôn Ngữ:</label>
+            <label for="language" class="visuallyhidden">{{message.language}}:</label>
             <select id="language" class="siteheader__select">
                <optgroup label="{{message.language}}">                              
                   <option class="option" value="en">English</option>
@@ -33,9 +23,9 @@
             </select>
          </div>
       </div>
-      <div class="pos-relative">
+      <div class="pos-relative desktop">
          <button id="member" type="button" class="siteheader__control" >
-            <span id="member-text" class="flex-wrapper">
+            <span id="member-text" class="flex-wrapper" (click) ="mouseEnter()">
                Tài khoản của tôi
                <span class="icon-ic siteheader__arrow-ic">
                   <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="13" height="7" viewBox="0 0 13 7">
@@ -44,9 +34,10 @@
                </span>
             </span>
          </button>
-         <div class="popover-wrapper popover-wrapper--bottom-trailing header-popover header-popover--member">
-            <section class="popover">
+         <div class="overlay-wrapper" *ngIf="show_login">
+            <section class="active">
                <div class="fs-menu__section">
+                  <span class="overlay_arrow"></span>
                   <ul class="fs-menu__list">
                      <li class="fs-menu__item"><button type="button" class="fs-menu__button w-100 ta-leading">Đăng nhập</button></li>
                      <li class="fs-menu__item"><button type="button" class="fs-menu__button w-100 ta-leading">Đăng ký</button></li>
@@ -55,5 +46,326 @@
             </section>
          </div>
       </div>
+      <div class="menu-mobile mobile">
+        <button type="button" class="siteheader__control--hamburger">
+          <span class="flex-wrapper">
+            <span class="icon-ic icon-contain icon-icn_hamburger_menu">
+               <img src="assets/img/icon-menu-mobile.svg" alt="" class="img-fluid">
+            </span>
+            Menu 
+          </span>
+        </button>
+    </div>
    </div>
 </header>
+<div class="header-wrapper" id="mod-head">
+   <section class="content-header">
+    <div class="dealform">
+     <div class="search-control">
+       <div class="search-input"> 
+         <input type="text" class="input-header" placeholder="TP Đà Nẵng">
+         <div class="search-icon">
+           <img src="assets/img/icon-search.svg" alt="" class="img-fluid">
+         </div>
+         <div class="search-btn-box">
+           <button class="btn btn-info btn-search"><span class="horus-btn-search__label desktop">{{message.search}}</span></button>
+         </div>
+       </div>        
+     </div>
+     <div class="hour-block">
+       <div class="hour-row">
+         <div class="hour-col hour-chekin">
+           <button class="btn btn-hour btn-checkin">
+             <span class="icon-cc btn-hour-icon">
+               <img src="assets/img/icon-recieve.svg" alt="" class="img-fluid">
+             </span>
+             <span class="btn-hour-content">
+               <span class="btn-hour-type">Nhận Phòng</span>
+               <time class="btn-hour-value" datetime="2 018-08-29">Thứ Tư, 29.08.18</time>
+             </span>
+           </button>
+         </div>
+         <div class="hour-col hour-chekout">
+           <button class="btn btn-hour btn-checkout">
+             <span class="icon-cc btn-hour-icon">
+               <img src="assets/img/icon-recieve.svg" alt="" class="img-fluid">
+             </span>
+             <span class="btn-hour-content">
+               <span class="btn-hour-type">Trả Phòng</span>
+               <time class="btn-hour-value" datetime="2018-08-29">Thứ Tư, 29.08.18</time>
+             </span>
+           </button>
+         </div>
+         <div class="hour-col hour-roomtype">
+           <div class="hour-col hour-chekin">
+             <button class="btn btn-hour btn-hour-roomtype" (click)="showSelectRoomType()">
+               <span class="btn-hour-content-wrap">
+                 <span class="icon-cc btn-hour-icon">                  
+                   <img src="assets/img/icon-group-room.svg" alt="" class="img-fluid">
+                 </span>  
+                 <span class="btn-hour-content">
+                   Phòng Cho Nhóm
+                 </span>   
+               </span>           
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+    <span aria-hidden="true" class="df_overlay_arrow" *ngIf="show_roomtype"></span> 
+    <div class="df_overlay" *ngIf="show_roomtype">
+      <div>
+        <div>
+          <ul class="df_container_roomtype_selector df_dropdown" aria-hidden="false" role="menu">
+            <li role="menuitem">
+              <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
+                 <span class="df_dropdown">
+                    <span class="df_dropdown_option">
+                       <span class="df_component">
+                          <span class="icon-ic">
+                             <img src="assets/img/icon-sigle-room.svg" alt="" class="img-fluid">
+                          </span>
+                       </span>
+                       <span class="df_component df_label">Phòng đơn</span>
+                    </span>
+                 </span>
+              </button>
+            </li>
+            <li role="menuitem">
+              <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
+                 <span class="df_dropdown">
+                    <span class="df_dropdown_option">
+                       <span class="df_component">
+                          <span class="icon-ic">
+                             <img src="assets/img/icon-double-room.svg" alt="" class="img-fluid">
+                          </span>
+                       </span>
+                       <span class="df_component df_label">Phòng đôi</span>
+                    </span>
+                 </span>
+              </button>
+            </li>
+            <li role="menuitem">
+              <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
+                 <span class="df_dropdown">
+                    <span class="df_dropdown_option">
+                       <span class="df_component">
+                          <span class="icon-ic">
+                             <img src="assets/img/icon-family-room.svg" alt="" class="img-fluid">
+                          </span>
+                       </span>
+                       <span class="df_component df_label">Phòng cho Gia đình</span>
+                    </span>
+                 </span>
+              </button>
+            </li>
+            <li role="menuitem">
+              <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
+                 <span class="df_dropdown">
+                    <span class="df_dropdown_option">
+                       <span class="df_component">
+                          <span class="icon-ic">
+                             <img src="assets/img/icon-group-room.svg" alt="" class="img-fluid">
+                          </span>
+                       </span>
+                       <span class="df_component df_label">Phòng Cho Nhóm</span>
+                    </span>
+                 </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section class="refinement-row js-refinement-row">
+      <h3 class="visuallyhidden">{{message.filter}}</h3>
+      <div class="refinement-row__placeholder-box">
+        <div class="filter-toolbar desktop">
+          <ul class="toolbar-list tag-row">
+            <li class="toolbar-list__item toolbar-list__item--price">
+               <div class="filter-item filter-item--price">
+                  <strong class="filter-item__label">{{message.price}}</strong>                
+                  <div class="fl-slider">
+                     <div class="fl-slider__labels clearfix">
+                        <p class="fl-slider__label fl-slider__label--cur">tối đa 11.629.790đ</p>
+                     </div>
+                     <div id="slider-range"></div>
+                     <input type="hidden" id="amount1">
+                     <input type="hidden" id="amount2">
+                     <div class="fl-slider__slide-holder" tabindex="0">
+                        <div class="fl-slider__holder"></div>
+                        <span class="visuallyhidden" id="filter-toolbar-price-handle">undefined</span>
+                        <div role="slider" aria-labelledby="filter-toolbar-price-handle" aria-valuemin="209.345" aria-valuemax="11.629.790" aria-valuenow="11.629.790" aria-valuetext="11.629.790đ" class="fl-slider__handle" tabindex="0" style="left: 100%;"></div>
+                        <div class="fl-slider__range" style="width: 100%;"></div>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li class="toolbar-list__item toolbar-list__item--stars">
+               <button type="button" class="filter-item filter-item--select js-toolbar-hover-button" title="Bất kỳ">
+                  <strong class="filter-item__label">{{message.star}}&nbsp;</strong>
+                  <span class="filter-item__placeholder">
+                     <span class="icon-ic icon-contain filter-ic filter-ic--deco filter-ic--stars">
+                        <img src="assets/img/icon-star.svg" alt="" class="img-fluid">
+                     </span>
+                     <span class="filter-value">{{message.any}}</span>
+                     <span class="icon-ic icon-contain filter-ic filter-ic--state filter-ic--arrow fill-white">
+                        <img src="assets/img/icon-dropdown-white.svg" alt="" class="img-fluid">
+                     </span>
+                  </span>
+               </button>
+            </li>
+            <li class="toolbar-list__item toolbar-list__item--rating">
+               <button type="button" class="filter-item filter-item--select js-toolbar-hover-button" title="Bất kỳ">
+                  <strong class="filter-item__label">{{message.rating}}&nbsp;</strong>
+                  <span class="filter-item__placeholder">
+                     <span class="filter-value">{{message.any}}</span>
+                     <span class="icon-ic icon-contain filter-ic filter-ic--state filter-ic--arrow fill-white">
+                        <img src="assets/img/icon-dropdown-white.svg" alt="" class="img-fluid">
+                     </span>
+                  </span>
+               </button>
+            </li>
+            <li class="toolbar-list__item toolbar-list__item--location">
+               <button type="button" class="filter-item filter-item--select js-toolbar-hover-button filter-item--active" title="Trung tâm thành phố/20 km"><strong class="filter-item__label">{{message.store_location}}&nbsp;</strong><span class="filter-item__placeholder"><span class="filter-value">{{message.center_city}}</span></span></button>
+               <div>
+                  <div class="popover-wrapper popover-wrapper--bottom-trailing js-popover-box popover-wrapper--refinement-row js-toolbar-hover-popover popover-wrapper--refinement-row-location">
+                     <section class="popover">
+                        <div class="popover__body popover__body--refinement-row popover__body--location">
+                           <div class="refinement-row__content">
+                              <h3 class="refinement-row__headline">Lưu trú</h3>
+                              <div>
+                                 <section class="distance-filters">
+                                    <h4 class="refinement-row__subheading">gần danh thắng</h4>
+                                    <div>
+                                       <label for="attractions" class="visuallyhidden">Điểm đến Hấp dẫn</label>
+                                       <select id="attractions" name="attractions" class="fl-group__select select icon-bg-icn_arrow-sml-down">
+                                          <option value="53116203">Trung tâm thành phố</option>
+                                          <option value="41075602">Bưu điện TP. Hồ Chí Minh</option>
+                                          <option value="339815602">Cảng Sài Gòn</option>
+                                          <option value="149603502">Chùa Phước Hải Tự</option>
+                                          <option value="40847602">Nhà thờ Đức Bà</option>
+                                          <option value="339731002">Sà Gòn Skydeck</option>
+                                          <option value="339729402">Sai Gon Train Station</option>
+                                          <option value="339728202">Sân bay Tân Sơn Nhất</option>
+                                          <option value="130670802">Sông Sài Gòn</option>
+                                          <option value="41076102">Ủy Ban Nhân Dân Thành phố</option>
+                                       </select>
+                                    </div>
+                                    <h4 class="refinement-row__subheading">hoặc gần địa chỉ</h4>
+                                    <div id="address-search" class="fl-search clearfix">
+                                       <label class="visuallyhidden" for="address-search-input">Địa chỉ</label><input type="text" id="address-search-input" class="fl-search__input text-overflow" autocomplete="off" spellcheck="true" placeholder="Địa chỉ">
+                                       <button type="button" id="address-search-btn" class="fl-search__btn">
+                                          <span class="icon-ic fl-search__btn-ic fill-maincolor-04-light icon-contain">
+                                             <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" baseProfile="tiny" viewBox="0 0 24 24">
+                                                <path class="svg-color--primary" fill="#37454D" d="M10 4c3.308 0 6 2.692 6 6s-2.692 6-6 6-6-2.692-6-6 2.692-6 6-6m0-2a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"></path>
+                                                <path class="svg-color--secondary" fill="none" stroke="#37454D" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M21 21l-6-6"></path>
+                                             </svg>
+                                          </span>
+                                          <span class="visuallyhidden btn-text">Áp dụng</span>
+                                       </button>
+                                    </div>
+                                    <div class="clearfix">
+                                       <h4 class="distance-slider-headline">trong phạm vi</h4>
+                                       <div class="fl-slider">
+                                          <div class="fl-slider__labels clearfix">
+                                             <p class="fl-slider__label fl-slider__label--cur">tối đa 20 km</p>
+                                          </div>
+                                          <div class="fl-slider__slide-holder" tabindex="0">
+                                             <div class="fl-slider__holder"></div>
+                                             <span class="visuallyhidden" id="distance-handle">Địa điểm Trung tâm thành phố</span>
+                                             <div role="slider" aria-labelledby="distance-handle" aria-valuemin="0.5" aria-valuemax="20" aria-valuenow="20" aria-valuetext="20 km" class="fl-slider__handle" tabindex="0" style="left: 100%;"></div>
+                                             <div class="fl-slider__range" style="width: 100%;"></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </section>
+                              </div>
+                           </div>
+                           <div class="refinement-row__actions"><button class="btn btn--small refinement-row__btn btn--tertiary refinement-row__btn--reset" type="button">Chọn lại</button><button class="btn btn--small btn--primary refinement-row__btn" type="button">Hoàn tất</button></div>
+                           <div></div>
+                           <div class="refinement-row__popover-hover-area"></div>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </li>
+            <li class="toolbar-list__item toolbar-list__item--more">
+               <button type="button" class="filter-item filter-item--select js-toolbar-hover-button" title="Chọn">
+                  <strong class="filter-item__label">{{message.other}}&nbsp;</strong>
+                  <span class="filter-item__placeholder">
+                     <span class="filter-value">{{message.choose}}</span>
+                     <span class="icon-ic icon-contain filter-ic filter-ic--state filter-ic--arrow fill-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="13" height="7" viewBox="0 0 13 7">
+                           <path class="svg-color--primary" fill="#37454D" d="M5.8 6.72L.32 1.822C-.094 1.472-.094.772.25.352c.342-.42 1.028-.42 1.44-.07l4.797 4.27L11.284.28c.412-.42 1.097-.35 1.44.07.412.42.342 1.12-.068 1.47L7.172 6.72c-.205.21-.412.28-.685.28-.274 0-.48-.07-.686-.28z"></path>
+                        </svg>
+                     </span>
+                  </span>
+               </button>
+            </li>
+          </ul>
+        </div>
+        <div class="slick-filter mobile">
+          <div class="tag-row">
+             <div class="tag-row__more-wrap">
+                <button class="tag-row__more btn btn--small tag-row__more--desktop-view" type="button">
+                   <span class="icon-ic tag-row__more-ic icon-contain fill-white">
+                      <img src="assets/img/icon-filter.svg" alt="" class="img-fluid">
+                   </span>
+                   <span class="btn__text">{{message.filter}}</span>
+                </button>
+             </div>
+             <div class="tag-box tag-box--full-width">
+                <button type="button" class="tag-list__control tag-list__control--prev tag-list__control--disabled" disabled="">
+                   <span class="icon-ic icon-contain icon-center fill-maincolor-04-light icon-flip">
+                      <img src="assets/img/icon-left-pull.png" alt="" class="img-fluid">
+                   </span>
+                   <span class="visuallyhidden">Kéo tùy chọn về bên trái</span>
+                </button>                
+                <div class="tag-box__scroll js-tags-scroll-box tag-box__scroll--desktop-view">
+                   <ul class="taglist taglist--selected js-tags" aria-label="Danh sách nhãn hiện tại của bạn xác định dữ liệu tìm kiếm" style="">
+                        <button class="tag js-refinement-row-tag taglist__item--id-price tag--secondary" type="button">
+                           Giá
+                           <span class="tag__expand">
+                              <span class="icon-ic tag-ic icon-center">
+                                 <img src="assets/img/icon-dropdown.svg" alt="" class="img-fluid">
+                              </span>
+                              <span class="visuallyhidden">Chỉnh lại tìm kiếm của bạn</span>
+                           </span>
+                        </button>
+                        <button class="tag js-refinement-row-tag taglist__item--id-rating tag--secondary tag--selected" type="button">
+                           Đánh giá: 7,0+
+                           <span class="tag__expand">
+                              <span class="icon-ic tag-ic icon-center">
+                                 <img src="assets/img/icon-dropdown.svg" alt="" class="img-fluid">
+                              </span>
+                              <span class="visuallyhidden">Chỉnh lại tìm kiếm của bạn</span>
+                           </span>
+                        </button>
+                        <button class="tag js-refinement-row-tag taglist__item--id-stars tag--secondary tag--selected" type="button">
+                           5 Sao
+                           <span class="tag__expand">
+                              <span class="icon-ic tag-ic icon-center">
+                                 <img src="assets/img/icon-dropdown.svg" alt="" class="img-fluid">
+                              </span>
+                              <span class="visuallyhidden">Chỉnh lại tìm kiếm của bạn</span>
+                           </span>
+                        </button>                      
+                      <button class="tag js-refinement-row-tag taglist__item--id-275700 tag--secondary" type="button">Wifi miễn phí</button>
+                      <li class="taglist__item-btn"><button class="btn btn--small tag-row__more-list-end" type="button">thêm</button></li>
+                   </ul>
+                </div>
+                <button type="button" class="tag-list__control tag-list__control--next tag-list__control--disabled" disabled="">
+                   <span class="icon-ic icon-contain icon-center fill-maincolor-04-light">
+                      <img src="assets/img/icon-right-pull.png" alt="" class="img-fluid">
+                   </span>
+                   <span class="visuallyhidden">Kéo tùy chọn về bên phải</span>
+                </button>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>

@@ -13,7 +13,9 @@ import { StarterHeaderComponent } from './starter/starter-header/starter-header.
 import { StarterContentComponent } from './starter/starter-content/starter-content.component';
 import { StarterFooterComponent } from './starter/starter-footer/starter-footer.component';
 import { StarterControlSidebarComponent } from './starter/starter-control-sidebar/starter-control-sidebar.component';
+import { ShopComponent } from './starter/shop/shop.component';
 import { AuthService } from './view/auth.service';
+import { SlickModule } from 'ngx-slick';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +26,16 @@ import { AuthService } from './view/auth.service';
     StarterControlSidebarComponent,
     AdminLoginComponent,
     AdminRegisterComponent,
-    ListUserComponent
+    ListUserComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SlickModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

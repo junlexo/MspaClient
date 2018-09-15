@@ -1,5 +1,18 @@
 export const messageVN = {
- 	adress:		"Địa Chỉ",
- 	language:	"Ngôn Ngữ",
- 	admin		: "Quản Trị"
+ 	adress					: "Địa Chỉ",
+ 	language				: "Ngôn Ngữ",
+ 	admin					: "Quản Trị",
+ 	currency_type			: "Loại tiền tệ",
+ 	search					: "Tìm",
+ 	filter					: "Bộ lọc",
+ 	price					: "Giá",
+ 	star					: "Hạng sao",
+ 	any						: "Bất kỳ",
+ 	rating					: "Đánh giá",
+ 	store_location			: "Địa điểm cửa hàng",
+ 	center_city				: "Trung tâm thành phố",
+ 	other					: "Khác",
+ 	choose					: "Chọn",
+ 	view_price				: "Xem Giá Tốt",
+ 	view_image				: "Xem hình ảnh",
 };

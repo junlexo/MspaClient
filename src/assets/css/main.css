@@ -5,8 +5,37 @@
     width: 100%;
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 2px 12px !important;
     font-size: 12px;
     line-height: 1.25;
-    z-index: 0;
+    z-index: 0;    
+}
+.mobile {
+    display: none;
+}
+
+.desktop {
+    display: block;
+}
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 999; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+@media only screen and (max-width: 991px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
 }

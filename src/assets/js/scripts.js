@@ -7,7 +7,7 @@ var AdminLTE = (function() {
       $(function(){
         $.AdminLTE.layout.activate();
         $.AdminLTE.layout.fix();
-        $.AdminLTE.layout.fixSidebar();
+        $.AdminLTE.layout.fixSidebar();        
       });
     }
   }

@@ -1,131 +1,14 @@
 <div class="content-wrapper" id="mod-home">
   <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <div class="dealform">
-      <div class="search-control">
-        <div class="search-input"> 
-          <input type="text" class="input-header" placeholder="TP Đà Nẵng">
-          <div class="search-icon">
-            <img src="assets/img/icon-search.svg" alt="" class="img-fluid">
-          </div>
-          <div class="search-btn-box">
-            <button class="btn btn-info btn-search">Tìm</button>
-          </div>
-        </div>        
-      </div>
-      <div class="hour-block">
-        <div class="hour-row">
-          <div class="hour-col hour-chekin">
-            <button class="btn btn-hour btn-checkin">
-              <span class="icon-cc btn-hour-icon">
-                <img src="assets/img/icon-recieve.svg" alt="" class="img-fluid">
-              </span>
-              <span class="btn-hour-content">
-                <span class="btn-hour-type">Nhận Phòng</span>
-                <time class="btn-hour-value" datetime="2018-08-29">Thứ Tư, 29.08.18</time>
-              </span>
-            </button>
-          </div>
-          <div class="hour-col hour-chekout">
-            <button class="btn btn-hour btn-checkout">
-              <span class="icon-cc btn-hour-icon">
-                <img src="assets/img/icon-recieve.svg" alt="" class="img-fluid">
-              </span>
-              <span class="btn-hour-content">
-                <span class="btn-hour-type">Trả Phòng</span>
-                <time class="btn-hour-value" datetime="2018-08-29">Thứ Tư, 29.08.18</time>
-              </span>
-            </button>
-          </div>
-          <div class="hour-col hour-roomtype">
-            <div class="hour-col hour-chekin">
-              <button class="btn btn-hour btn-hour-roomtype" (click)="showSelectRoomType()">
-                <span class="btn-hour-content-wrap">
-                  <span class="icon-cc btn-hour-icon">                  
-                    <img src="assets/img/icon-group-room.svg" alt="" class="img-fluid">
-                  </span>  
-                  <span class="btn-hour-content">
-                    Phòng Cho Nhóm
-                  </span>   
-                </span>           
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span aria-hidden="true" class="df_overlay_arrow" *ngIf="show_roomtype"></span> 
-    <div class="df_overlay" *ngIf="show_roomtype">
-     <div>
-        <div>
-           <ul class="df_container_roomtype_selector df_dropdown" aria-hidden="false" role="menu">
-              <li role="menuitem">
-                 <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
-                    <span class="df_dropdown">
-                       <span class="df_dropdown_option">
-                          <span class="df_component">
-                             <span class="icon-ic">
-                                <img src="assets/img/icon-sigle-room.svg" alt="" class="img-fluid">
-                             </span>
-                          </span>
-                          <span class="df_component df_label">Phòng đơn</span>
-                       </span>
-                    </span>
-                 </button>
-              </li>
-              <li role="menuitem">
-                 <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
-                    <span class="df_dropdown">
-                       <span class="df_dropdown_option">
-                          <span class="df_component">
-                             <span class="icon-ic">
-                                <img src="assets/img/icon-double-room.svg" alt="" class="img-fluid">
-                             </span>
-                          </span>
-                          <span class="df_component df_label">Phòng đôi</span>
-                       </span>
-                    </span>
-                 </button>
-              </li>
-              <li role="menuitem">
-                 <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
-                    <span class="df_dropdown">
-                       <span class="df_dropdown_option">
-                          <span class="df_component">
-                             <span class="icon-ic">
-                                <img src="assets/img/icon-family-room.svg" alt="" class="img-fluid">
-                             </span>
-                          </span>
-                          <span class="df_component df_label">Phòng cho Gia đình</span>
-                       </span>
-                    </span>
-                 </button>
-              </li>
-              <li role="menuitem">
-                 <button type="button" class="btn__roomtype" (click)="selectRoomType($event)">
-                    <span class="df_dropdown">
-                       <span class="df_dropdown_option">
-                          <span class="df_component">
-                             <span class="icon-ic">
-                                <img src="assets/img/icon-group-room.svg" alt="" class="img-fluid">
-                             </span>
-                          </span>
-                          <span class="df_component df_label">Phòng Cho Nhóm</span>
-                       </span>
-                    </span>
-                 </button>
-              </li>
-           </ul>
-        </div>
-     </div>
-  </div>
-  </section>
-
+  
   <!-- Main content -->
   <section class="content">
-
+	<app-shop *ngFor="let emp of [0,1,2,3,4,5,6,7,8,9,10]; let i=index"
+		[image]="image"
+		[shopInfo]="shop" >
+	</app-shop>
     <!-- Your Page Content Here -->
-
+	
   </section>
   <!-- /.content -->
 </div>
