@@ -1,5 +1,5 @@
 export const messageVN = {
- 	adress					: "Địa Chỉ",
+ 	address					: "Địa Chỉ",
  	language				: "Ngôn Ngữ",
  	admin					: "Quản Trị",
  	currency_type			: "Loại tiền tệ",
@@ -15,4 +15,10 @@ export const messageVN = {
  	choose					: "Chọn",
  	view_price				: "Xem Giá Tốt",
  	view_image				: "Xem hình ảnh",
+ 	image					: "Hình ảnh",
+ 	info					: "Thông tin",
+ 	comment					: "Nhận xét",
+ 	share_this				: "Chia sẽ cửa hàng này",
+ 	list_employ				: "Danh sách nhân viên",
+ 	booking					: "Đặt lịch"
 };

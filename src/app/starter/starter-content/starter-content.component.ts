@@ -11,10 +11,11 @@ import {} from 'jquery';
 export class StarterContentComponent implements OnInit {	
 	shop : any = {};
 	image: string;
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit() {
-		this.initShop();
+		this.initShop();		
 	}
 	initShop() {
 		this.shop.shop_name = "SILA";
@@ -25,5 +26,13 @@ export class StarterContentComponent implements OnInit {
 		this.shop.point = 6;
 		this.shop.price = 2000000;
 		this.shop.price_promotion = 1000000;
-	}
+	}	
 }
+
+// $(function () {
+// 	(<any>$(".list-item")).not(".slick-initialized").slick({
+//       infinite: true,
+//       slidesToShow: 1,
+//       slidesToScroll: 1
+//     });
+// });

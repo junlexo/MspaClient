@@ -1,0 +1,64 @@
+.sl-box__title {
+	font-weight: 700;
+	font-size: 20px;	
+}
+.shop-info {
+	padding: 16px;
+}
+.shop-block-info {
+	width: 100%;	
+	border: 1px solid #cdd0d2;
+}
+.shop-service {
+	margin-top: 10px;
+}
+.address-info {
+	padding: 0 16px 16px;
+}
+.map-content {
+	padding: 16px;
+}
+.sl-box__title {
+    color: #37454d;
+    font-size: 12px;
+    margin: 0 0 -1px;
+    border: 1px solid #cdd0d2;
+    border-width: 1px 0;
+    padding: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-scope {
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	.avatar {
+		width: 50px;
+	    height: 50px;
+	    border-radius: 50%;
+	    overflow: hidden;
+	}
+	.item-wrapper {
+		margin-top: 10px;
+		display: table;
+		list-style-type: none;
+		cursor: pointer;
+		width: 25%;
+	}
+	.item{
+		display: flex;		
+	}
+	.employee-name {
+		display: flex;
+		flex-direction: column;
+	    justify-content: center;
+	    width: 130px;	    
+	}
+	.name {
+		white-space: pre-line;
+	}
+}
+.list-employee {
+	padding: 16px;
+}

@@ -14,8 +14,12 @@ import { StarterContentComponent } from './starter/starter-content/starter-conte
 import { StarterFooterComponent } from './starter/starter-footer/starter-footer.component';
 import { StarterControlSidebarComponent } from './starter/starter-control-sidebar/starter-control-sidebar.component';
 import { ShopComponent } from './starter/shop/shop.component';
+import { ShopDetailComponent } from './starter/shop-detail/shop-detail.component';
+import { ShopImageComponent } from './starter/shop-image/shop-image.component';
+import { ShopInfoComponent } from './starter/shop-info/shop-info.component';
 import { AuthService } from './view/auth.service';
-import { SlickModule } from 'ngx-slick';
+import { MyDatePickerModule } from 'mydatepicker';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,15 +31,19 @@ import { SlickModule } from 'ngx-slick';
     AdminLoginComponent,
     AdminRegisterComponent,
     ListUserComponent,
-    ShopComponent
+    ShopComponent,
+    ShopDetailComponent,
+    ShopImageComponent,
+    ShopInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule,
-    SlickModule.forRoot()
+    ReactiveFormsModule, 
+    MyDatePickerModule,
+    AngularDateTimePickerModule   
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

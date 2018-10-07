@@ -1,0 +1,88 @@
+.shop-detail {
+	background: #ffffff;	
+	padding-bottom: 20px;
+}
+.shop-detail-navigation {
+	border-top: 1px solid #ebeced;
+    border-bottom: 1px solid #cdd0d2;
+    .slideouts-navigation {
+    	position: relative;
+    }
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		list-style-type: none;
+		display: inline-block;		
+		&.active button{
+			color: #37454d;
+    		border-bottom-color: #37454d;
+		}
+		button {
+			background: #ffffff;
+			border: 0;
+			height: 49px;
+			font-size: 16px;
+			color: #697379;
+			font-weight: 700;
+			border-bottom: 2px solid #ffffff; 
+			outline: none;   	
+			&:hover {
+				color: #37454d;
+				background-color: #ebeced;
+			}	
+		}
+	}
+		
+
+	.btn--slideouts-close {
+		position: absolute;
+		top: 0;
+		right: 0;		   
+	    width: 49px;
+	    height: 49px;
+	    background: #fff;
+	    border: 0;			
+		.slideouts-navigation__close-ic {
+		    width: 9px;
+		    height: 9px;
+		    position: relative;
+		}
+	}
+}
+.shop-detail-button {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px 10px;
+
+    .btn-share,
+    .btn-close {
+    	background-color: #fff;
+	    border: 1px solid #697379;
+	    color: #37454d;
+		font-weight: 700;
+		outline: none;
+	    &:hover {
+	    	background-color: #697379;
+    		color: #fff;
+	    }
+    }
+	
+	.btn__label {
+		margin-left: 10px;
+	}
+}
+.visuallyhidden {
+	border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}

@@ -14,6 +14,9 @@ header .siteheader__logo-link {
 	text-transform: uppercase;
 	cursor: pointer;
 }
+.content-header {
+    z-index: 11;
+}
 .siteheader__headertools {
 	display: flex;
 }
@@ -206,7 +209,35 @@ header .siteheader__logo-link {
 	border: none;
 	width: 100%;
 	margin-right: 8px;
+    position: relative;
 }
+.my-date-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    opacity: 0;
+    cursor: pointer;
+}
+.my-date-picker.active {
+    opacity: 1;
+    .mydp {
+        border: 0;
+    }
+    .selectiongroup {
+        opacity: 0;
+    }
+}
+.wc-date-container {
+    height: 42px;
+}
+// .my-date-picker.active .mydp{
+//     border: 0;
+// }
+// .my-date-picker.active .selectiongroup{
+//     opacity: 0;
+// }
 #mod-head .btn-checkin:after
 {
 	background-color: #007fad;
@@ -579,5 +610,10 @@ li{
             out-line: none;
             background: url('../../../assets/img/icon-search-mobile.svg') center center no-repeat;            
         }
+    }
+}
+@media only screen and (max-width: 360px){
+    #mod-head .btn-hour-value {
+        font-size: 10px;
     }
 }

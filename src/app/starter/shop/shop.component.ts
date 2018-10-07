@@ -10,11 +10,14 @@ var _that;
 
 export class ShopComponent implements OnInit {
   message;
+  swt : number = 0;
   @Input('image') image: string;
   @Input('shopInfo') shop;
   constructor() { }
    ngOnInit() {
-  	this.message = Message();
-    
+  	this.message = Message();   
+  }
+  switTab(swt:any) {
+    this.swt = swt;
   }
 }

@@ -1,5 +1,5 @@
-.shop-content {
-	margin-bottom: 10px; 
+.shop-overview {
+	margin-top: 10px; 
 	display: flex;
 	flex-direction: row;
 	background-color: #ffffff;
@@ -122,6 +122,7 @@
 	    font-weight: 700;
 	    color: #c94a30;
 	    margin: 2px 0;
+	    text-decoration: line-through;
     }
     .price-promotion {
     	font-size: 18px;
@@ -137,6 +138,54 @@
     	right: 0;
     	background: #c94a30;
     	border: none;
-    	border-radius: 2px;    	
+    	border-radius: 2px;   
+    	color: #ffffff; 	
     }
+}
+
+@media only screen and (max-width: 599px)
+{
+	.shop-overview {
+		flex-direction: column;
+	}
+	.shop-info {
+		width: 100%;
+
+		.shop-image {
+			width: 37%;
+		}
+		.shop-text {
+			width: 63%;
+			padding-left: 0;
+		}
+	}
+	.shop-button-price {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+
+		.shop-price {
+			text-align: left;
+		}
+
+		.price-value ,
+		.price-promotion {
+			font-size: 14px;
+		}
+
+		.button-content {
+			flex-direction: row;
+			width: 63%;
+			padding: 10px 0 0 0;
+			border-left: 0;
+			border-top: 1px solid #cdd0d2;
+		}
+		
+		.button {
+			display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    padding: 0 5px;
+		}
+	}
 }

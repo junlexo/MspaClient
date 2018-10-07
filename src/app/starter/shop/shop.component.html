@@ -1,41 +1,44 @@
 <div class="shop-content">
-	<div class="shop-info">
-		<div class="shop-image">
-			<img src="assets/img/{{image}}" alt="" class="img-fluid">
-			<button type="button" class="button-view-image">
-				<span class="image-text-wrapper">
-					<span class="image-text">
-						{{message.view_image}}
+	<div class="shop-overview">
+		<div class="shop-info">
+			<div class="shop-image">
+				<img src="assets/img/{{image}}" alt="" class="img-fluid">
+				<button type="button" class="button-view-image">
+					<span class="image-text-wrapper">
+						<span class="image-text">
+							{{message.view_image}}
+						</span>
 					</span>
-				</span>
-			</button>
-		</div>
-		<div class="shop-text">
-			<h3>{{shop.shop_name}}</h3>
-			<span class="shop_type">{{shop.service_type}}</span>
-			<div class="address"><span>{{shop.address}}, cách Trung tâm thành phố 0,9 km(<a href="">Xem trên bản đồ</a>)</span></div>
-			<div class="shop_rating">
-				<span class="value_rating">{{shop.rating}}</span>
-				<span class="text_rating">Xuất sắc</span>
-			</div>
-			<div class="shop_mark">
-				<span>({{shop.point}}/10)</span>
-			</div>
-		</div>
-	</div>
-	<div class="shop-button-price">
-		<div class="button-content">
-			<div class="shop-price">
-				<span class="price">{{message.price}}</span>
-				<span class="price-value">{{shop.price | number}}đ</span>
-				<span class="price-promotion">{{shop.price_promotion | number}}đ</span>
-			</div>
-			<div class="button">
-				<button class="btn btn-success show-detail">
-					{{message.view_price}}
 				</button>
 			</div>
-			<button type="button" tabindex="-1" class="item__flag font-tiny fw-bold fs-normal ta-center trv-maincolor-03 font-bright cur-pointer--hover flag--deal-best" data-log-id="4">&lrm;-50%</button>
-		</div>		
+			<div class="shop-text">
+				<h3 (click)="switTab(1)">{{shop.shop_name}}</h3>
+				<span class="shop_type">{{shop.service_type}}</span>
+				<div class="address desktop"><span>{{shop.address}}, cách Trung tâm thành phố 0,9 km(<a href="">Xem trên bản đồ</a>)</span></div>
+				<div class="shop_rating">
+					<span class="value_rating">{{shop.rating}}</span>
+					<span class="text_rating">Xuất sắc</span>
+				</div>
+				<div class="shop_mark">
+					<span>({{shop.point}}/10)</span>
+				</div>
+			</div>
+		</div>
+		<div class="shop-button-price">
+			<div class="button-content">
+				<div class="shop-price">
+					<span class="price">{{message.price}}</span>
+					<span class="price-value">{{shop.price | number}}đ</span>
+					<span class="price-promotion">{{shop.price_promotion | number}}đ</span>
+				</div>
+				<div class="button">
+					<button class="btn btn-success show-detail">
+						{{message.booking}}
+					</button>
+				</div>
+				<button type="button" tabindex="-1" class="item__flag font-tiny fw-bold fs-normal ta-center trv-maincolor-03 font-bright cur-pointer--hover flag--deal-best desktop" data-log-id="4">&lrm;-50%</button>
+			</div>		
+		</div>
 	</div>
+	<app-shop-detail [tab]="swt" *ngIf="swt != 0" (switTab)="switTab($event)"></app-shop-detail>
 </div>

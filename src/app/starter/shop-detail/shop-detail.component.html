@@ -1,0 +1,32 @@
+<div class="shop-detail">
+	<div class="shop-detail-navigation">
+		<div class="slideouts-navigation">
+		   <div class="tabs no-select tabs--slideouts">
+		      <ul role="tablist" class="tabs__list">
+		         <li role="tab" class="tabs__item active"><button class="tabs__label" (click)="onSelectTab(1)">{{message.image}}</button></li>
+		         <li role="tab" class="tabs__item"><button class="tabs__label" tabindex="-1" (click)="onSelectTab(2)">{{message.info}}</button></li>
+		         <li role="tab" class="tabs__item"><button class="tabs__label" tabindex="-1" (click)="onSelectTab(3)" >{{message.comment}}</button></li>		         
+		      </ul>
+		   </div>
+		   <button type="button" class="btn--slideouts-close" (click)="closeShop()">
+		      <span class="icon-ic slideouts-navigation__close-ic icon-contain fill-maincolor-04-light">
+		         <img src="assets/img/icon-close.svg" alt="" class="img-fluid">
+		      </span>
+		      <span class="visuallyhidden">Đóng</span>
+		   </button>
+		</div>
+	</div>
+	<div class="shop-detail-content">
+		<app-shop-image *ngIf="switchTab == 1"></app-shop-image>
+		<app-shop-info *ngIf="switchTab == 2"></app-shop-info>
+	</div>
+	<div class="shop-detail-button">		
+	   <button type="button" class="btn btn-share">
+	      <span class="icon-ic icon-center icon-contain share-overlay-btn__icon btn__ic">
+	         <img src="assets/img/icon-share.svg" alt="" class="img-fluid">
+	      </span>
+	      <span class="btn__label">{{message.share_this}}</span>
+	   </button>
+		<button type="button" class="btn btn-close" (click)="closeShop()">Đóng</button>
+	</div>
+</div>

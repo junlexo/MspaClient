@@ -12,7 +12,7 @@ import { ListUserComponent } from './../view/list/list.component';
       { path: 'login', component: AdminLoginComponent },
       { path: 'register', component: AdminRegisterComponent },
       { path: 'list', component: ListUserComponent },
-    ])
+    ], {useHash: true})
   ],
   declarations: [],
   exports: [ RouterModule]

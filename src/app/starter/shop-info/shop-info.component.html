@@ -1,0 +1,29 @@
+<div class="shop-info">
+	<div class="shop-block-info shop-map">
+		<header class="sl-box__header text-overflow"><h3 class="sl-box__title">{{message.address}}</h3></header>
+		<div style="width: 100%" class="map-content">
+			<iframe width="100%" height="259" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Google Maps iframe generator</a>
+			</iframe>
+		</div>
+		<div class="address-info">
+			<span itemprop="address" class="block fs-italic pt-gutter"><em itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">38 Bùi Thị Xuân</span>, <span itemprop="postalCode">700000</span>, <span itemprop="addressLocality">TP. Hồ Chí Minh</span>, <span itemprop="addressCountry">Việt Nam</span></em></span>
+		</div>
+	</div>
+	<div class="shop-block-info shop-service">
+		<header class="sl-box__header text-overflow"><h3 class="sl-box__title">{{message.list_employ}}</h3></header>
+		<div class="list-employee">
+			<ul class="list-scope">
+				<li class="item-wrapper" *ngFor="let emp of [0,1,2,3,4,5,6,7,8,9,10]; let i=index">	
+					<div class="item">
+						<div class="avatar">
+							<img src="assets/upload/hot-girl.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="employee-name">
+							<span class="name">Hoàng Thùy Linh</span>
+						</div>
+					</div>				
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

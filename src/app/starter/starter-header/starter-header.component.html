@@ -75,24 +75,34 @@
      <div class="hour-block">
        <div class="hour-row">
          <div class="hour-col hour-chekin">
-           <button class="btn btn-hour btn-checkin">
-             <span class="icon-cc btn-hour-icon">
+           <button class="btn btn-hour btn-checkin" (click)="showPicker('.btn-checkin')">
+             <span class="icon-cc btn-hour-icon desktop">
                <img src="assets/img/icon-recieve.svg" alt="" class="img-fluid">
              </span>
              <span class="btn-hour-content">
                <span class="btn-hour-type">Nhận Phòng</span>
-               <time class="btn-hour-value" datetime="2 018-08-29">Thứ Tư, 29.08.18</time>
+               <time class="btn-hour-value" datetime="2 018-08-29">-- . -- . --</time>
+               <angular2-date-picker [(ngModel)]="dateIn"
+                                      [settings]="settings"
+                                       class="date my-date-picker"
+                                       (onDateSelect)="onDateSelect($event, '.btn-checkin')">
+                </angular2-date-picker>
              </span>
            </button>
          </div>
          <div class="hour-col hour-chekout">
-           <button class="btn btn-hour btn-checkout">
-             <span class="icon-cc btn-hour-icon">
+           <button class="btn btn-hour btn-checkout" (click)="showPicker('.btn-checkout')">
+             <span class="icon-cc btn-hour-icon desktop">
                <img src="assets/img/icon-recieve.svg" alt="" class="img-fluid">
              </span>
              <span class="btn-hour-content">
                <span class="btn-hour-type">Trả Phòng</span>
-               <time class="btn-hour-value" datetime="2018-08-29">Thứ Tư, 29.08.18</time>
+               <time class="btn-hour-value" datetime="2018-08-29">-- . -- . --</time>
+               <angular2-date-picker [(ngModel)]="dateOut"
+                                      [settings]="settings"
+                                       class="date my-date-picker"
+                                       (onDateSelect)="onDateSelect($event, '.btn-checkout')">
+                </angular2-date-picker>           
              </span>
            </button>
          </div>
